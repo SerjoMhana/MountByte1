@@ -23,20 +23,6 @@
   
   <!-- WhatsApp and Theme buttons (left side) -->
   <div class="fixed bottom-8 left-8 z-50 flex flex-col gap-4">
-    <!-- Contact/WhatsApp button -->
-    <button
-      class="w-14 h-14 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full shadow-elegant hover:shadow-elegant-hover transition-all duration-300 hover:scale-110 group relative overflow-hidden animate-pulse-glow"
-      title="Contact us on WhatsApp"
-    >
-      <i class="fab fa-whatsapp text-xl group-hover:animate-pulse"></i>
-      <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-full"></div>
-      
-      <!-- Notification dot -->
-      <div class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
-        <span class="text-white text-xs font-bold">1</span>
-      </div>
-    </button>
-    
     <!-- Theme toggle -->
     <button
       @click="toggleTheme"

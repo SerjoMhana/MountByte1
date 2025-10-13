@@ -211,20 +211,20 @@ const messages = {
       "no_projects": "No projects found for this category.",
       "projects": {
         "project1": {
-          "name": "E-commerce Website Redesign",
-          "description": "A modern and responsive e-commerce platform with enhanced user experience."
+          "name": "Personal Website for University Professor",
+          "description": "Personal website for a university professor specializing in cybersecurity, showcasing academic achievements, research, and publications."
         },
         "project2": {
-          "name": "Mobile App UI/UX Design",
-          "description": "Intuitive and visually appealing design for a new mobile application."
+          "name": "Financial & Administrative Services Office",
+          "description": "Professional office providing comprehensive financial and administrative services to help your business thrive and succeed."
         },
         "project3": {
-          "name": "Corporate Landing Page",
-          "description": "High-converting landing page for a corporate client, focusing on lead generation."
+          "name": "International School Website",
+          "description": "Professional website for an international school showcasing their educational services, programs, and institutional information."
         },
         "project4": {
-          "name": "Brand Identity Design",
-          "description": "Complete brand identity package including logo, typography, and color palette."
+          "name": "International School with 3 Branches",
+          "description": "Comprehensive website for an international school network with three branches, currently under development."
         },
         "project5": {
           "name": "Portfolio Website",
@@ -531,20 +531,20 @@ const messages = {
       "no_projects": "لم يتم العثور على مشاريع لهذه الفئة.",
       "projects": {
         "project1": {
-          "name": "إعادة تصميم موقع للتجارة الإلكترونية",
-          "description": "منصة تجارة إلكترونية حديثة وسريعة الاستجابة مع تجربة مستخدم محسنة."
+          "name": "موقع شخصي لدكتورة جامعية",
+          "description": "موقع شخصي لدكتورة جامعية متخصصة في الأمن السيبراني، يعرض إنجازاتها الأكاديمية وأبحاثها ومنشوراتها."
         },
         "project2": {
-          "name": "تصميم واجهة مستخدم/تجربة مستخدم لتطبيق جوال",
-          "description": "تصميم بديهي وجذاب بصريًا لتطبيق جوال جديد."
+          "name": "مكتب للخدمات المالية والإدارية",
+          "description": "مكتب احترافي يقدم خدمات مالية وإدارية شاملة لمساعدة عملك على الازدهار والنجاح."
         },
         "project3": {
-          "name": "صفحة هبوط للشركات",
-          "description": "صفحة هبوط عالية التحويل لعميل شركة، تركز على جذب العملاء المحتملين."
+          "name": "موقع مدرسة دولية",
+          "description": "موقع احترافي لمدرسة دولية يعرض خدماتها التعليمية وبرامجها وبياناتها المؤسسية."
         },
         "project4": {
-          "name": "تصميم هوية العلامة التجارية",
-          "description": "حزمة هوية علامة تجارية كاملة تشمل الشعار والطباعة ولوحة الألوان."
+          "name": "مدرسة دولية بثلاثة فروع",
+          "description": "موقع شامل لمدرسة دولية تتكون من ثلاثة فروع، لازال تحت البناء."
         },
         "project5": {
           "name": "موقع محفظة أعمال",
