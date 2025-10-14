@@ -10,17 +10,24 @@
     <div class="relative z-20 max-w-7xl mx-auto min-h-screen flex items-center pt-28">
       <div class="flex flex-col lg:flex-row gap-16 items-center w-full px-6 justify-between">
         
-        <div :class="isRTL ? 'lg:order-2' : 'lg:order-2'">
+        <div :class="isRTL ? 'lg:order-2' : 'lg:order-2'" class="lg:w-1/2">
           <div class="relative"
             v-motion
             :initial="{ opacity: 0, x: -100, rotateY: 30 }"
             :enter="{ opacity: 1, x: 0, rotateY: 0, transition: { duration: 1200, delay: 600 } }">
             
             <div class="relative group perspective-1000">
-              <img src="https://cdni.iconscout.com/illustration/premium/thumb/web-development-4487645-3725188.png?f=webp" :alt="$t('hero.imageAlt')" class="w-full h-auto rounded-2xl shadow-2xl transform group-hover:rotateY-6 group-hover:rotateX-3 transition-all duration-500 hover:scale-105" />
+              <!-- Large stunning hero image -->
+              <div class="relative bg-gradient-to-br from-primary-500/20 via-accent-500/20 to-secondary-500/20 rounded-3xl p-8 backdrop-blur-sm">
+                <img :src="heroImage" :alt="$t('hero.imageAlt')" 
+                  class="w-full h-auto max-w-2xl mx-auto drop-shadow-2xl transform group-hover:scale-110 transition-all duration-700 ease-out filter brightness-110 contrast-110" 
+                  style="filter: drop-shadow(0 25px 50px rgba(59, 130, 246, 0.5));" />
+              </div>
               
-              <div class="absolute -top-8 -right-8 w-20 h-20 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full shadow-xl animate-float opacity-80 group-hover:animate-bounce"></div>
-              <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-r from-accent-400 to-secondary-400 rounded-full shadow-xl animate-float opacity-70" style="animation-delay: 2s;"></div>
+              <!-- Animated decorative elements -->
+              <div class="absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full shadow-2xl animate-float opacity-80 group-hover:animate-bounce blur-xl"></div>
+              <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-r from-accent-400 to-secondary-400 rounded-full shadow-2xl animate-float opacity-70 blur-xl" style="animation-delay: 2s;"></div>
+              <div class="absolute top-1/2 -right-8 w-24 h-24 bg-gradient-to-r from-secondary-400 to-primary-400 rounded-full shadow-xl animate-float opacity-60 blur-lg" style="animation-delay: 4s;"></div>
             </div>
           </div>
         </div>
@@ -118,6 +125,7 @@
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
+import heroImage from '@/assets/hero2-removebg-preview.png'
 
 const { locale } = useI18n()
 const isRTL = computed(() => ['ar', 'he', 'fa'].includes(locale.value))
