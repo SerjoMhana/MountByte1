@@ -18,7 +18,7 @@
             
             <div class="relative group perspective-1000">
               <!-- Large stunning hero image -->
-              <div class="relative bg-gradient-to-br from-primary-500/20 via-accent-500/20 to-secondary-500/20 rounded-3xl p-8 backdrop-blur-sm">
+              <div class="relative ">
                 <img :src="heroImage" :alt="$t('hero.imageAlt')" 
                   class="w-full h-auto max-w-2xl mx-auto drop-shadow-2xl transform group-hover:scale-110 transition-all duration-700 ease-out filter brightness-110 contrast-110" 
                   style="filter: drop-shadow(0 25px 50px rgba(59, 130, 246, 0.5));" />
@@ -125,7 +125,7 @@
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
-import heroImage from '@/assets/hero2-removebg-preview.png'
+import heroImage from '@/assets/Gemini_Generated_Image_z881lwz881lwz881-removebg-preview.png'
 
 const { locale } = useI18n()
 const isRTL = computed(() => ['ar', 'he', 'fa'].includes(locale.value))

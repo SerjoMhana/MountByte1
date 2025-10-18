@@ -30,25 +30,29 @@ const submitted = ref(false);
 
 // --- Intersection Observer (لتحسين أداء الرسوم المتحركة) ---
 onMounted(() => {
-  useIntersectionObserver(
-    contactInfoSection,
-    ([{ isIntersecting }]) => {
-      if (isIntersecting) {
-        contactInfoSectionIsVisible.value = true;
-      }
-    },
-    { threshold: 0.3 }
-  );
+  if (contactInfoSection.value) {
+    useIntersectionObserver(
+      contactInfoSection,
+      ([{ isIntersecting }]) => {
+        if (isIntersecting) {
+          contactInfoSectionIsVisible.value = true;
+        }
+      },
+      { threshold: 0.3 }
+    );
+  }
 
-  useIntersectionObserver(
-    contactFormSection,
-    ([{ isIntersecting }]) => {
-      if (isIntersecting) {
-        contactFormSectionIsVisible.value = true;
-      }
-    },
-    { threshold: 0.3 }
-  );
+  if (contactFormSection.value) {
+    useIntersectionObserver(
+      contactFormSection,
+      ([{ isIntersecting }]) => {
+        if (isIntersecting) {
+          contactFormSectionIsVisible.value = true;
+        }
+      },
+      { threshold: 0.3 }
+    );
+  }
 });
 
 // --- دالة الإرسال لـ Apps Script ---
@@ -131,11 +135,17 @@ async function submitForm() {
         </Motion>
       </div>
     </section>
-<section class="py-16 md:py-24">
+    
+    <section class="py-16 md:py-24">
       <div class="container mx-auto px-6">
         <div ref="contactInfoSection" class="bg-white dark:bg-gray-700 py-12 px-6 sm:px-12 md:px-20 lg:px-32 rounded-lg shadow-xl mb-12">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-            <Motion :initial="{ opacity: 0, y: 20 }" :animate="contactInfoSectionIsVisible ? { opacity: 1, y: 0 } : {}" :transition="{ delay: 0.2, duration: 0.6 }">
+            <!-- Address Card -->
+            <Motion 
+              :initial="{ opacity: 0, y: 20 }" 
+              :animate="contactInfoSectionIsVisible ? { opacity: 1, y: 0 } : {}" 
+              :transition="{ delay: 0.2, duration: 0.6 }"
+            >
               <div>
                 <div class="flex justify-center mb-4">
                   <i class="fas fa-map-marker-alt text-green-500 text-4xl"></i>
@@ -145,7 +155,12 @@ async function submitForm() {
               </div>
             </Motion>
 
-            <Motion :initial="{ opacity: 0, y: 20 }" :animate="contactInfoSectionIsVisible ? { opacity: 1, y: 0 } : {}" :transition="{ delay: 0.4, duration: 0.6 }">
+            <!-- Phone Card -->
+            <Motion 
+              :initial="{ opacity: 0, y: 20 }" 
+              :animate="contactInfoSectionIsVisible ? { opacity: 1, y: 0 } : {}" 
+              :transition="{ delay: 0.4, duration: 0.6 }"
+            >
               <div class="border-l border-r border-gray-200 dark:border-gray-600 px-4">
                 <div class="flex justify-center mb-4">
                   <i class="fas fa-phone-alt text-green-500 text-4xl"></i>
@@ -155,60 +170,66 @@ async function submitForm() {
               </div>
             </Motion>
 
-            <Motion :initial="{ opacity: 0, y: 20 }" :animate="contactInfoSectionIsVisible ? { opacity: 1, y: 0 } : {}" :transition="{ delay: 0.6, duration: 0.6 }">
+            <!-- Email Card -->
+            <Motion 
+              :initial="{ opacity: 0, y: 20 }" 
+              :animate="contactInfoSectionIsVisible ? { opacity: 1, y: 0 } : {}" 
+              :transition="{ delay: 0.6, duration: 0.6 }"
+            >
               <div>
                 <div class="flex justify-center mb-4">
                   <i class="fas fa-envelope text-green-500 text-4xl"></i>
                 </div>
                 <h3 class="font-semibold text-lg mb-1 text-gray-800 dark:text-white">{{ t('contact.info.email.title') }}</h3>
-                <a href="mailto:info@mountbyte.ly" class="text-green-500 dark:text-green-400 hover:underline">{{ t('contact.info.email.value') }}</a>
+                <!-- Using literal email address instead of translation to avoid i18n parsing issues -->
+                <a href="mailto:info@mountbyte.ly" class="text-green-500 dark:text-green-400 hover:underline">info@mountbyte.ly</a>
               </div>
             </Motion>
           </div>
         </div>
-<div ref="contactFormSection" class="max-w-8xl mx-auto">
-            <Motion
-                :initial="{ opacity: 0, y: 50 }"
-                :animate="contactFormSectionIsVisible ? { opacity: 1, y: 0 } : {}"
-                :transition="{ delay: 0.2, duration: 0.8 }"
-            >
-                <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-xl">
-                <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white text-center">{{ t('contact.form.title') }}</h2>
-                
-                <p v-if="submitError" class="text-red-500 text-center mb-4 font-semibold">{{ submitError }}</p>
+        
+        <div ref="contactFormSection" class="max-w-8xl mx-auto">
+          <Motion
+            :initial="{ opacity: 0, y: 50 }"
+            :animate="contactFormSectionIsVisible ? { opacity: 1, y: 0 } : {}"
+            :transition="{ delay: 0.2, duration: 0.8 }"
+          >
+            <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-xl">
+              <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white text-center">{{ t('contact.form.title') }}</h2>
+              
+              <p v-if="submitError" class="text-red-500 text-center mb-4 font-semibold">{{ submitError }}</p>
 
-                <form @submit.prevent="submitForm" v-if="!submitted">
-                    <div class="mb-4">
-                    <label for="name" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">{{ t('contact.form.name') }}</label>
-                    <input type="text" id="name" v-model="form.name" class="w-full px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-600 border-transparent focus:border-green-500 focus:ring-green-500" required>
-                    </div>
-                    
-                    <div class="mb-4">
-                    <label for="email" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">{{ t('contact.form.email') }}</label>
-                    <input type="email" id="email" v-model="form.email" class="w-full px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-600 border-transparent focus:border-green-500 focus:ring-green-500" required>
-                    </div>
-                    
-                    <div class="mb-4">
-                    <label for="message" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">{{ t('contact.form.message') }}</label>
-                    <textarea id="message" v-model="form.message" rows="5" class="w-full px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-600 border-transparent focus:border-green-500 focus:ring-green-500" required></textarea>
-                    </div>
-                    
-                    <button 
-                        type="submit" 
-                        class="w-full bg-green-500 text-white py-3 rounded-md font-semibold hover:bg-green-600 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                        :disabled="isSubmitting"
-                    >
-                        {{ isSubmitting ? t('contact.form.sending') : t('contact.form.submit') }}
-                    </button>
-                </form>
-                
-                <div v-else class="text-center py-10">
-                    <i class="fas fa-check-circle text-green-500 text-5xl mb-4"></i>
-                    <p class="text-lg font-semibold text-gray-800 dark:text-white">{{ t('contact.form.success') }}</p>
+              <form @submit.prevent="submitForm" v-if="!submitted">
+                <div class="mb-4">
+                  <label for="name" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">{{ t('contact.form.name') }}</label>
+                  <input type="text" id="name" v-model="form.name" class="w-full px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-600 border-transparent focus:border-green-500 focus:ring-green-500" required>
                 </div>
                 
+                <div class="mb-4">
+                  <label for="email" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">{{ t('contact.form.email') }}</label>
+                  <input type="email" id="email" v-model="form.email" class="w-full px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-600 border-transparent focus:border-green-500 focus:ring-green-500" required>
                 </div>
-            </Motion>
+                
+                <div class="mb-4">
+                  <label for="message" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">{{ t('contact.form.message') }}</label>
+                  <textarea id="message" v-model="form.message" rows="5" class="w-full px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-600 border-transparent focus:border-green-500 focus:ring-green-500" required></textarea>
+                </div>
+                
+                <button 
+                  type="submit" 
+                  class="w-full bg-green-500 text-white py-3 rounded-md font-semibold hover:bg-green-600 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  :disabled="isSubmitting"
+                >
+                  {{ isSubmitting ? t('contact.form.sending') : t('contact.form.submit') }}
+                </button>
+              </form>
+              
+              <div v-else class="text-center py-10">
+                <i class="fas fa-check-circle text-green-500 text-5xl mb-4"></i>
+                <p class="text-lg font-semibold text-gray-800 dark:text-white">{{ t('contact.form.success') }}</p>
+              </div>
+            </div>
+          </Motion>
         </div>
       </div>
     </section>

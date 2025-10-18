@@ -15,7 +15,7 @@
     <div class="relative z-10 group-hover:transform group-hover:-translate-y-2 transition-transform duration-500">
       <div class="bg-gradient-to-br from-primary-500 to-primary-600 text-white text-4xl rounded-2xl w-20 h-20 flex items-center justify-center shadow-elegant group-hover:shadow-glow group-hover:scale-110 transition-all duration-500 mb-4 relative overflow-hidden">
         <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-        <span class="relative z-10 group-hover:animate-bounce">{{ icon }}</span>
+        <i :class="icon" class="relative z-10 group-hover:animate-bounce"></i>
       </div>
       
       <h3 class="text-2xl font-bold text-gray-800 group-hover:text-primary-700 transition-colors duration-300 mb-3">

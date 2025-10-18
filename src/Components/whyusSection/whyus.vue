@@ -27,17 +27,17 @@
         <WhyUsCard 
           :title="$t('whyus.card1.title')" 
           :delay="0" 
-          imageUrl="/src/assets/tirza-van-dijk-o1SKqmgSDbg-unsplash.jpg"
+          :imageUrl="image1"
         />
         <WhyUsCard 
           :title="$t('whyus.card2.title')" 
           :delay="200" 
-          imageUrl="/src/assets/fotis-fotopoulos-DuHKoV44prg-unsplash.jpg"
+          :imageUrl="image2"
         />
         <WhyUsCard 
           :title="$t('whyus.card3.title')" 
           :delay="400" 
-          imageUrl="/src/assets/john-FlPc9_VocJ4-unsplash.jpg"
+          :imageUrl="image3"
         />
       </div>
       
@@ -47,6 +47,9 @@
 
 <script setup>
 import WhyUsCard from '../WhyUsCard/WhyUsCard.vue';
+import image1 from '@/assets/tirza-van-dijk-o1SKqmgSDbg-unsplash.jpg'
+import image2 from '@/assets/fotis-fotopoulos-DuHKoV44prg-unsplash.jpg'
+import image3 from '@/assets/john-FlPc9_VocJ4-unsplash.jpg'
 </script>
 
 <style scoped>

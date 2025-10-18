@@ -23,25 +23,25 @@
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <SubscriptionCard
-          icon="💻"
+          icon="fas fa-laptop-code"
           :title="$t('services.card1.title')"
           :desc="$t('services.card1.desc')"
           :delay="0"
         />
         <SubscriptionCard
-          icon="💡"
+          icon="fas fa-lightbulb"
           :title="$t('services.card2.title')"
           :desc="$t('services.card2.desc')"
           :delay="200"
         />
         <SubscriptionCard
-          icon="🛠️"
+          icon="fas fa-tools"
           :title="$t('services.card3.title')"
           :desc="$t('services.card3.desc')"
           :delay="400"
         />
         <SubscriptionCard
-          icon="🚀"
+          icon="fas fa-rocket"
           :title="$t('services.card4.title')"
           :desc="$t('services.card4.desc')"
           :delay="600"
