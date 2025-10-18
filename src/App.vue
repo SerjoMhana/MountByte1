@@ -10,10 +10,14 @@ import Footer from './Components/Footer/Footer.vue';
 const { locale } = useI18n();
 const { scrollY, isScrolled } = useScrollAnimations();
 const route = useRoute();
+const isMobileMenuOpen = ref(false);
 
+// Modified to fix mobile header visibility issue
 const isHeaderWhite = computed(() => {
   const whiteHeaderRoutes = ['/about', '/works', '/contact'];
-  return isScrolled.value || whiteHeaderRoutes.includes(route.path);
+  // Always make header white on mobile devices for better visibility
+  const isMobile = window.innerWidth < 768;
+  return isScrolled.value || whiteHeaderRoutes.includes(route.path) || isMobile;
 });
 
 const navPadding = computed(() => {
@@ -28,6 +32,10 @@ const navPadding = computed(() => {
 
 function switchLanguage() {
   locale.value = locale.value === 'ar' ? 'en' : 'ar';
+}
+
+function toggleMobileMenu() {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value;
 }
 
 watch(locale, (newLocale) => {
@@ -45,6 +53,16 @@ onMounted(() => {
   } else {
     document.documentElement.classList.remove('dark');
   }
+  
+  // Add resize listener to handle mobile/desktop switching
+  const handleResize = () => {
+    // Close mobile menu when resizing to desktop
+    if (window.innerWidth >= 768) {
+      isMobileMenuOpen.value = false;
+    }
+  };
+  
+  window.addEventListener('resize', handleResize);
 });
 </script>
 
@@ -65,7 +83,7 @@ onMounted(() => {
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
         <router-link to="/" class="flex items-center space-x-3 rtl:space-x-reverse group transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-lg">
           <div class="relative">
-            <img src="https://flowbite.com/docs/images/logo.svg" class="h-9 transition-all duration-300 group-hover:rotate-12" alt="MountByte Logo" />
+            <img src="@/assets/logo.png" class="h-14 transition-all duration-300 group-hover:rotate-12" alt="MountByte Logo" />
             <div class="absolute inset-0 bg-primary-500 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
           </div>
           <span :class="[
@@ -85,14 +103,19 @@ onMounted(() => {
             <i class="fa-solid fa-globe w-5 h-5 rounded-full me-2 sm:me-3"></i>
             <span class="hidden sm:inline">{{ $t('nav.language') }}</span>
           </button>
-          <button data-collapse-toggle="navbar-language" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-primary-500 transition-all duration-300 hover:scale-110" aria-controls="navbar-language" aria-expanded="false">
+          <button @click="toggleMobileMenu" data-collapse-toggle="navbar-language" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-primary-500 transition-all duration-300 hover:scale-110" 
+                  :class="isHeaderWhite ? 'text-gray-500 bg-gray-100' : 'text-white bg-white/20'"
+                  aria-controls="navbar-language" :aria-expanded="isMobileMenuOpen">
             <span class="sr-only">{{ $t('nav.openMenu') }}</span>
             <svg class="w-5 h-5 transition-transform duration-300 hover:rotate-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
             </svg>
           </button>
         </div>
-        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-language">
+        <div :class="[
+               'items-center justify-between w-full md:flex md:w-auto md:order-1',
+               isMobileMenuOpen ? 'block' : 'hidden md:block'
+             ]" id="navbar-language">
           <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
             <li>
               <router-link to="/" :class="[

@@ -41,28 +41,6 @@
         />
       </div>
       
-      <!-- Statistics section -->
-      <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
-           v-motion
-           :initial="{ y: 50, opacity: 0 }"
-           :visibleOnce="{ y: 0, opacity: 1, transition: { duration: 800, delay: 600 } }">
-        <div class="text-center group">
-          <div class="text-3xl md:text-4xl font-bold text-primary-600 mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
-          <div class="text-gray-600 dark:text-gray-400 font-medium">{{ $t('whyus.stats.projectsCompleted') }}</div>
-        </div>
-        <div class="text-center group">
-          <div class="text-3xl md:text-4xl font-bold text-accent-600 mb-2 group-hover:scale-110 transition-transform duration-300">99%</div>
-          <div class="text-gray-600 dark:text-gray-400 font-medium">{{ $t('whyus.stats.clientSatisfaction') }}</div>
-        </div>
-        <div class="text-center group">
-          <div class="text-3xl md:text-4xl font-bold text-secondary-600 mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
-          <div class="text-gray-600 dark:text-gray-400 font-medium">{{ $t('whyus.stats.teamMembers') }}</div>
-        </div>
-        <div class="text-center group">
-          <div class="text-3xl md:text-4xl font-bold text-primary-600 mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
-          <div class="text-gray-600 dark:text-gray-400 font-medium">{{ $t('whyus.stats.supportAvailable') }}</div>
-        </div>
-      </div>
     </div>
   </section>
 </template>

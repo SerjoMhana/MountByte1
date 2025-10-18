@@ -31,7 +31,7 @@
           <div class="mb-4">
             <i class="fas fa-smile-beam text-4xl text-yellow-400 group-hover:animate-bounce"></i>
           </div>
-          <div class="counter text-4xl md:text-5xl font-bold text-white mb-2" data-target="500">0</div>
+          <div class="counter text-4xl md:text-5xl font-bold text-white mb-2" data-target="30">0</div>
           <div class="text-white/80 font-medium">{{ $t('statsCounter.happyClients') }}</div>
           <div class="w-full h-1 bg-white/20 rounded-full mt-4 overflow-hidden">
             <div class="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000"></div>
@@ -43,7 +43,7 @@
           <div class="mb-4">
             <i class="fas fa-project-diagram text-4xl text-green-400 group-hover:animate-bounce"></i>
           </div>
-          <div class="counter text-4xl md:text-5xl font-bold text-white mb-2" data-target="750">0</div>
+          <div class="counter text-4xl md:text-5xl font-bold text-white mb-2" data-target="43">0</div>
           <div class="text-white/80 font-medium">{{ $t('statsCounter.projectsDone') }}</div>
           <div class="w-full h-1 bg-white/20 rounded-full mt-4 overflow-hidden">
             <div class="h-full bg-gradient-to-r from-green-400 to-green-500 rounded-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000 delay-200"></div>
@@ -55,7 +55,7 @@
           <div class="mb-4">
             <i class="fas fa-calendar-check text-4xl text-blue-400 group-hover:animate-bounce"></i>
           </div>
-          <div class="counter text-4xl md:text-5xl font-bold text-white mb-2" data-target="8">0</div>
+          <div class="counter text-4xl md:text-5xl font-bold text-white mb-2" data-target="5">0</div>
           <div class="text-white/80 font-medium">{{ $t('statsCounter.yearsExperience') }}</div>
           <div class="w-full h-1 bg-white/20 rounded-full mt-4 overflow-hidden">
             <div class="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000 delay-400"></div>
@@ -67,7 +67,7 @@
           <div class="mb-4">
             <i class="fas fa-users text-4xl text-purple-400 group-hover:animate-bounce"></i>
           </div>
-          <div class="counter text-4xl md:text-5xl font-bold text-white mb-2" data-target="25">0</div>
+          <div class="counter text-4xl md:text-5xl font-bold text-white mb-2" data-target="10">0</div>
           <div class="text-white/80 font-medium">{{ $t('statsCounter.teamMembers') }}</div>
           <div class="w-full h-1 bg-white/20 rounded-full mt-4 overflow-hidden">
             <div class="h-full bg-gradient-to-r from-purple-400 to-purple-500 rounded-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000 delay-600"></div>

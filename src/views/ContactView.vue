@@ -151,7 +151,7 @@ async function submitForm() {
                   <i class="fas fa-phone-alt text-green-500 text-4xl"></i>
                 </div>
                 <h3 class="font-semibold text-lg mb-1 text-gray-800 dark:text-white">{{ t('contact.info.phone.title') }}</h3>
-                <p class="text-green-500 dark:text-green-400 hover:underline cursor-pointer">{{ t('contact.info.phone.value') }}</p>
+                <a href="tel:+218910079478" class="text-green-500 dark:text-green-400 hover:underline">{{ t('contact.info.phone.value') }}</a>
               </div>
             </Motion>
 
@@ -161,7 +161,7 @@ async function submitForm() {
                   <i class="fas fa-envelope text-green-500 text-4xl"></i>
                 </div>
                 <h3 class="font-semibold text-lg mb-1 text-gray-800 dark:text-white">{{ t('contact.info.email.title') }}</h3>
-                <p class="text-gray-600 dark:text-gray-300">{{ t('contact.info.email.value') }}</p>
+                <a href="mailto:info@mountbyte.ly" class="text-green-500 dark:text-green-400 hover:underline">{{ t('contact.info.email.value') }}</a>
               </div>
             </Motion>
           </div>

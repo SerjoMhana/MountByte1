@@ -4,10 +4,13 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Site Info -->
         <div class="space-y-4">
-          <h2 class="text-2xl font-bold text-primary-400">MountByte</h2>
+          <div class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="@/assets/logo.png" alt="MountByte Logo" class="h-14 w-auto" />
+            <h2 class="text-2xl font-bold text-primary-400">MountByte</h2>
+          </div>
           <p class="text-gray-400">{{ $t('footer.description') }}</p>
           <div class="flex space-x-4 rtl:space-x-reverse">
-            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100067036129373" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
             <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
             <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>

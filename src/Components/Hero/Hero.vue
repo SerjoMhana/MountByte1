@@ -79,7 +79,7 @@
             :initial="{ opacity: 0, x: 50 }"
             :enter="{ opacity: 1, x: 0, transition: { duration: 800, delay: 1200 } }">
             <div class="text-center">
-              <div class="text-2xl font-bold text-primary-400">500+</div>
+              <div class="text-2xl font-bold text-primary-400">40+</div>
               <div class="text-sm text-white/70">{{ $t('hero.projects') }}</div>
             </div>
             <div class="text-center">
@@ -87,7 +87,7 @@
               <div class="text-sm text-white/70">{{ $t('hero.satisfaction') }}</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-secondary-400">8+</div>
+              <div class="text-2xl font-bold text-secondary-400">5+</div>
               <div class="text-sm text-white/70">{{ $t('hero.years') }}</div>
             </div>
           </div>

@@ -91,7 +91,7 @@ const messages = {
       },
       "story": {
         "title": "Our Story",
-        "paragraph1": "Founded in 20XX, our journey began with a simple yet powerful vision: to empower businesses with cutting-edge technology and design. From humble beginnings, we've grown into a dynamic agency, driven by a commitment to excellence and a passion for innovation.",
+        "paragraph1": "Founded in 2020, our journey began with a simple yet powerful vision: to empower businesses with cutting-edge technology and design. From humble beginnings, we've grown into a dynamic agency, driven by a commitment to excellence and a passion for innovation.",
         "paragraph2": "Over the years, we've collaborated with diverse clients, transforming ideas into impactful digital solutions. Our success is built on a foundation of strong relationships, continuous learning, and a relentless pursuit of perfection."
       },
       "imageAlt": "Our Story",
@@ -258,15 +258,15 @@ const messages = {
         "title": "Contact Information",
         "address": {
           "title": "Address",
-          "value": "Bab Ben Ghashir, 82510, Tripoli, Libya"
+          "value": "Tripoli, Libya"
         },
         "email": {
           "title": "Email Service",
-          "value": "'cs@ls.ly'"
+          "value": "info@mountbyte.ly"
         },
         "phone": {
           "title": "Phone",
-          "value": "+218 21 3632323"
+          "value": "+218 910079478"
         }
       },
       "form": {
@@ -382,7 +382,7 @@ const messages = {
       },
       "story": {
         "title": "قصتنا",
-        "paragraph1": "تأسست في عام 20XX، بدأت رحلتنا برؤية بسيطة ولكنها قوية: تمكين الشركات بأحدث التقنيات والتصاميم. من بدايات متواضعة، نمونا إلى وكالة ديناميكية، مدفوعة بالالتزام بالتميز والشغف بالابتكار.",
+        "paragraph1": "تأسست في عام 2020، بدأت رحلتنا برؤية بسيطة ولكنها قوية: تمكين الشركات بأحدث التقنيات والتصاميم. من بدايات متواضعة، نمونا إلى وكالة ديناميكية، مدفوعة بالالتزام بالتميز والشغف بالابتكار.",
         "paragraph2": "على مر السنين، تعاونا مع عملاء متنوعين، محولين الأفكار إلى حلول رقمية مؤثرة. يعتمد نجاحنا على أساس من العلاقات القوية، والتعلم المستمر، والسعي الدؤوب نحو الكمال."
       },
       "imageAlt": "قصتنا",
@@ -498,15 +498,15 @@ const messages = {
         "title": "معلومات الاتصال",
         "address": {
           "title": "العنوان",
-          "value": "باب بن غشير، 82510، طرابلس، ليبيا"
+          "value": "طرابلس , ليبيا"
         },
         "email": {
           "title": "البريد الإلكتروني",
-          "value": "'cs@ls.ly'"
+          "value": "info@mountbyte.ly"
         },
         "phone": {
           "title": "الهاتف",
-          "value": "+218 21 3632323"
+          "value": "+218 910079478"
         }
       },
       "form": {

@@ -116,7 +116,7 @@ onMounted(() => {
             :transition="{ delay: 0.4, duration: 0.8 }"
           >
             <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <i class="fas fa-lightbulb text-5xl text-primary mb-4"></i>
+              <i class="fas fa-lightbulb text-5xl text-green-600 mb-4"></i>
               <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">{{ t('about.mission.innovation.title') }}</h3>
               <p class="text-gray-600 dark:text-gray-300">{{ t('about.mission.innovation.description') }}</p>
             </div>
@@ -127,7 +127,7 @@ onMounted(() => {
             :transition="{ delay: 0.6, duration: 0.8 }"
           >
             <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <i class="fas fa-users text-5xl text-primary mb-4"></i>
+              <i class="fas fa-users text-5xl text-green-600 mb-4"></i>
               <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">{{ t('about.mission.community.title') }}</h3>
               <p class="text-gray-600 dark:text-gray-300">{{ t('about.mission.community.description') }}</p>
             </div>
@@ -138,7 +138,7 @@ onMounted(() => {
             :transition="{ delay: 0.8, duration: 0.8 }"
           >
             <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <i class="fas fa-handshake text-5xl text-primary mb-4"></i>
+              <i class="fas fa-handshake text-5xl text-green-600 mb-4"></i>
               <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">{{ t('about.mission.integrity.title') }}</h3>
               <p class="text-gray-600 dark:text-gray-300">{{ t('about.mission.integrity.description') }}</p>
             </div>

@@ -49,12 +49,12 @@
           <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
         </router-link>
         
-        <button class="group magnetic-btn border-2 border-white text-white hover:bg-white hover:text-primary-700 px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 relative overflow-hidden">
+        <router-link to="/contact" class="group magnetic-btn border-2 border-white text-white hover:bg-white hover:text-primary-700 px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 relative overflow-hidden">
           <span class="relative z-10 flex items-center">
             <span class="mr-3">{{ $t('callToAction.scheduleCall') }}</span>
             <i class="fas fa-phone group-hover:animate-pulse"></i>
           </span>
-        </button>
+        </router-link>
       </div>
       
       <!-- Trust indicators -->
