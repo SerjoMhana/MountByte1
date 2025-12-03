@@ -5,6 +5,7 @@ import WorksView from '../views/WorksView.vue'
 // import ArticlesView from '../views/ArticlesView.vue'
 import ContactView from '../views/ContactView.vue'
 import FormView from '../views/FormView.vue'
+import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 
 
 const router = createRouter({
@@ -39,6 +40,11 @@ const router = createRouter({
       path: '/Form',
       name: 'Form',
       component: FormView,
+    },
+    {
+      path: '/privacy-policy',
+      name: 'privacy-policy',
+      component: PrivacyPolicy,
     },
     {
       path: '/blog/:slug',

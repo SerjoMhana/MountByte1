@@ -25,6 +25,7 @@
             <li><router-link to="/about" class="text-gray-400 hover:text-white">{{ $t('nav.about') }}</router-link></li>
             <li><router-link to="/works" class="text-gray-400 hover:text-white">{{ $t('nav.works') }}</router-link></li>
             <li><router-link to="/contact" class="text-gray-400 hover:text-white">{{ $t('nav.contact') }}</router-link></li>
+            <li><router-link to="/privacy-policy" class="text-gray-400 hover:text-white">{{ $t('privacyPolicy.linkText') }}</router-link></li>
           </ul>
         </div>
 

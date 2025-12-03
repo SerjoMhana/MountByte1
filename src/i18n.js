@@ -278,6 +278,12 @@ const messages = {
         "success": "Thank you for your message! We will get back to you soon."
       }
     },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "effectiveDate": "Effective Date",
+      "switchLanguage": "العربية",
+      "linkText": "Privacy Policy"
+    },
     footer: {
       description: 'We create digital solutions innovative for your business future.',
       links: 'Quick Links',
@@ -517,6 +523,12 @@ const messages = {
         "submit": "إرسال الرسالة",
         "success": "شكرًا لرسالتك! سنعود إليك قريبًا."
       }
+    },
+    "privacyPolicy": {
+      "title": "سياسة الخصوصية",
+      "effectiveDate": "تاريخ النفاذ",
+      "switchLanguage": "English",
+      "linkText": "سياسة الخصوصية"
     },
     "works": {
       "hero": {
